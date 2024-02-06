@@ -16,14 +16,14 @@ let N;
 let total;
 
 let path = [];
-
+let direction = 'p'
 let counter = 0;
     p.setup = () => {
         p.createCanvas(2000, 2000);
         p.background(220,220,220);
         p.frameRate(48); 
 
-
+        
         N = p.int(p.pow(2, order));
   total = N * N;
 
@@ -44,15 +44,31 @@ let counter = 0;
           if(counter < path.length ){
         for (let i = 1; i < counter; i++) {
             p.strokeWeight(i*.001);
-            p.stroke( 255);
+           
             p.line(path[i].x, path[i].y, path[i - 1].x, path[i - 1].y);
         }
           }
+
+        
         //endShape();
-      
+      if(direction === 'p' ){
+        p.stroke( 255);
         counter += 1;
+      } 
+
+      if(direction === 'm' ){
+        p.stroke( 0);
+        counter -= 1;
+      } 
+
+
+       
         if (counter >= path.length) {
-          counter = 0;
+          direction = 'm';
+        }
+
+        if (counter === 0) {
+          direction = 'p';
         }
       
        
