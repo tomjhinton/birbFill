@@ -203,7 +203,7 @@ useFrame((state, delta) => {
         font="FerriteCoreDX-Regular.otf"
         scale={1 }
        
-        position={ [ .0, -2.250, -4 ] }
+        position={ [ .0, -2.250, 6 ] }
         fontSize={1.5}
         
         
